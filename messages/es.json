@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "title": "WYN Logistics - Entrega de Paquetes",
+    "description": "Soluciones de logística y entrega de paquetes confiables y rápidas"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "tracking": "Seguimientos",
+    "reviews": "Opiniones",
+    "services": "Servicios",
+    "support": "Suporte",
+    "contactUs": "Contáctanos"
+  },
+  "hero": {
+    "headline": "Entregando tus paquetes con precisión y velocidad.",
+    "learnMore": "Saber Más",
+    "videoCard": {
+      "counter": "01/03",
+      "title": "Mira cómo trabajamos."
+    }
+  },
+  "stats": {
+    "badge": "Estadísticas",
+    "title": "Soluciones personalizadas para los requisitos de tu negocio",
+    "deliveries": "Entregas",
+    "reviews": "Reseñas",
+    "happyClients": "Clientes Satisfechos",
+    "totalStore": "Total Tiendas"
+  },
+  "services": {
+    "title": "SOLUCIONES DE TRANSPORTE SIN ESFUERZO",
+    "description": "Desde el almacén hasta el destino, aseguramos una entrega fluida, rápida y segura. Experimenta logística de primer nivel que impulsa tu negocio hacia adelante.",
+    "tags": {
+      "delivery": "ENTREGA",
+      "innovations": "INNOVACIONES",
+      "logisticsSolutions": "SOLUCIONES LOGÍSTICAS"
+    },
+    "rating": {
+      "basedOn": "Basado en 3440+ Reseñas"
+    }
+  },
+  "testimonials": {
+    "badge": "Reseñas",
+    "title": "Cómo Transformamos Su Trayectoria Logística",
+    "subtitle": "Estamos orgullosos de impulsar las cadenas de suministro de empresas de rápido crecimiento en todo el mundo. Esto es lo que tienen que decir sobre nuestra asociación.",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Sarah Jenkins",
+        "role": "Directora de Operaciones, TechFlow",
+        "content": "WYN transformó nuestra cadena de suministro. La API de seguimiento en tiempo real nos permitió reducir los tickets de soporte al cliente en un 40% en el primer mes."
+      },
+      {
+        "id": 2,
+        "name": "Michael Chen",
+        "role": "Fundador, EcoGoods Import",
+        "content": "Necesitábamos un socio que entendiera las complejidades de las aduanas internacionales. Su equipo manejó todo de manera impecable."
+      },
+      {
+        "id": 3,
+        "name": "Emily Davis",
+        "role": "Gerente de Logística, UrbanStore",
+        "content": "La opción de Entrega el Mismo Día nos dio una ventaja competitiva masiva durante la temporada navideña."
+      },
+      {
+        "id": 4,
+        "name": "David Wilson",
+        "role": "CEO, Wilson Components",
+        "content": "Manejar productos electrónicos frágiles es arriesgado. Las opciones de embalaje seguro y seguro de WYN nos dieron tranquilidad."
+      },
+      {
+        "id": 5,
+        "name": "Jessica Brown",
+        "role": "Líder de Cadena de Suministro, FreshFoods",
+        "content": "La logística de cadena de frío es difícil. Mantuvieron la temperatura perfectamente para nuestros productos perecederos a través de tres estados."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Obtén Todos los Detalles Sobre",
+    "titleHighlight": "Tus Entregas",
+    "subtitle": "Encuentra respuestas a las preguntas más comunes sobre nuestros servicios de envío, herramientas de seguimiento y cómo apoyamos tus necesidades logísticas diarias.",
+    "questions": [
+      {
+        "question": "¿Qué tipos de servicios de entrega ofrecen?",
+        "answer": "Ofrecemos una amplia gama de opciones de entrega que incluyen Entrega el Mismo Día para paquetes urgentes, Envío Terrestre Estándar para soluciones rentables y Express Internacional para alcance global."
+      },
+      {
+        "question": "¿Cómo puedo rastrear mi paquete en tiempo real?",
+        "answer": "Puedes rastrear tu envío usando el número de seguimiento proporcionado en tu correo electrónico de confirmación. Simplemente ingrésalo en nuestra página de 'Seguimiento de Pedidos' o usa nuestra aplicación móvil para actualizaciones en vivo sobre la ubicación de tu paquete."
+      },
+      {
+        "question": "¿Ofrecen seguro para artículos de alto valor?",
+        "answer": "Sí, ofrecemos seguro de carga integral. Todos los envíos incluyen cobertura básica, pero para productos electrónicos de alto valor o artículos frágiles, recomendamos agregar nuestro plan de Protección Premium durante el pago."
+      },
+      {
+        "question": "¿Cómo programo una recogida a domicilio?",
+        "answer": "Programar una recogida es fácil. Inicia sesión en tu cuenta, selecciona 'Programar Recogida', elige tu fecha y ventana horaria preferidas, y nuestro mensajero vendrá a tu puerta a recoger el paquete."
+      }
+    ],
+    "cta": {
+      "headline": "Somos un socio logístico confiable, ofreciendo soluciones de envío oportunas y seguras.",
+      "subtitle": "¿Listo para enviar? Pongamos tu paquete en movimiento hoy.",
+      "seeService": "Ver Nuestro Servicio",
+      "getQuote": "Obtener Cotización"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "Compañía",
+      "aboutUs": "Sobre nosotros",
+      "ourTeam": "Nuestro equipo",
+      "sustainability": "Sostenibilidad",
+      "careers": "Carreras"
+    },
+    "services": {
+      "title": "Servicios",
+      "worldwideShipping": "Envío mundial",
+      "seaFreight": "Flete marítimo",
+      "airFreight": "Flete aéreo",
+      "lastMileDelivery": "Entrega de última milla"
+    },
+    "shipping": {
+      "title": "Envío",
+      "trackPackages": "Rastrear Paquetes",
+      "calculateRate": "Calcular Tarifa",
+      "schedulePickup": "Programar Recogida",
+      "prohibitedItems": "Artículos Prohibidos"
+    },
+    "support": {
+      "title": "Soporte",
+      "helpCenter": "Centro de Ayuda",
+      "customsClearance": "Despacho de Aduana",
+      "fileAClaim": "Presentar Reclamo",
+      "contactUs": "Contáctanos"
+    },
+    "news": {
+      "title": "Noticias",
+      "pressReleases": "Comunicados de Prensa",
+      "logisticsBlog": "Blog de Logística",
+      "marketUpdates": "Actualizaciones del Mercado"
+    },
+    "copyright": "Copyright © WYN 2025 | Todos los Derechos Reservados",
+    "readyToShip": "¿Listo para enviar de forma más inteligente?",
+    "termsOfUse": "Términos de Uso",
+    "privacyPolicy": "Política de Privacidad",
+    "email": "info@wyn.com"
+  }
+}

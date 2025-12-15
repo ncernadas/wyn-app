@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "title": "WYN Logistics - Package Delivery",
+    "description": "Reliable and fast logistics and package delivery solutions"
+  },
+  "navbar": {
+    "home": "Home",
+    "tracking": "Tracking",
+    "reviews": "Reviews",
+    "services": "Services",
+    "support": "Support",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "headline": "Delivering your packages with precision and speed.",
+    "learnMore": "Learn More",
+    "videoCard": {
+      "counter": "01/03",
+      "title": "See how we work."
+    }
+  },
+  "stats": {
+    "badge": "Stats",
+    "title": "Tailored solutions for your business requirements",
+    "deliveries": "Deliveries",
+    "reviews": "Reviews",
+    "happyClients": "Happy Clients",
+    "totalStore": "Total Store"
+  },
+  "services": {
+    "title": "EFFORTLESS TRANSPORTATION SOLUTIONS",
+    "description": "From warehouse to destination, we ensure smooth, fast, and secure delivery. Experience top-tier logistics that move your business forward.",
+    "tags": {
+      "delivery": "DELIVERY",
+      "innovations": "INNOVATIONS",
+      "logisticsSolutions": "LOGISTICS SOLUTIONS"
+    },
+    "rating": {
+      "basedOn": "Based on 3440+ Reviewed"
+    }
+  },
+  "testimonials": {
+    "badge": "Reviews",
+    "title": "How We Transformed Their Logistics Journey",
+    "subtitle": "We are proud to power the supply chains of fast-growing businesses worldwide. Here is what they have to say about our partnership.",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Sarah Jenkins",
+        "role": "Operations Director, TechFlow",
+        "content": "WYN transformed our supply chain. The real-time tracking API allowed us to reduce customer support tickets by 40% in the first month."
+      },
+      {
+        "id": 2,
+        "name": "Michael Chen",
+        "role": "Founder, EcoGoods Import",
+        "content": "We needed a partner who understood international customs complexities. Their team handled everything flawlessly."
+      },
+      {
+        "id": 3,
+        "name": "Emily Davis",
+        "role": "Logistics Manager, UrbanStore",
+        "content": "The Same-Day Delivery option gave us a massive competitive edge during the holiday season."
+      },
+      {
+        "id": 4,
+        "name": "David Wilson",
+        "role": "CEO, Wilson Components",
+        "content": "Handling fragile electronics is risky. WYN's secure packaging and insurance options gave us peace of mind."
+      },
+      {
+        "id": 5,
+        "name": "Jessica Brown",
+        "role": "Supply Chain Lead, FreshFoods",
+        "content": "Cold chain logistics are tough. They maintained the temperature perfectly for our perishable goods across three states."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Get All the Details About",
+    "titleHighlight": "Your Deliveries",
+    "subtitle": "Find answers to the most common questions about our shipping services, tracking tools, and how we support your daily logistics needs.",
+    "questions": [
+      {
+        "question": "What types of delivery services do you offer?",
+        "answer": "We provide a comprehensive range of delivery options including Same-Day Delivery for urgent packages, Standard Ground Shipping for cost-effective solutions, and International Express for global reach."
+      },
+      {
+        "question": "How can I track my package in real-time?",
+        "answer": "You can track your shipment using the tracking number provided in your confirmation email. Simply enter it on our \"Track Order\" page or use our mobile app for live updates on your package location."
+      },
+      {
+        "question": "Do you offer insurance for high-value items?",
+        "answer": "Yes, we offer comprehensive cargo insurance. All shipments include basic coverage, but for high-value electronics or fragile goods, we recommend adding our Premium Protection plan during checkout."
+      },
+      {
+        "question": "How do I schedule a home pickup?",
+        "answer": "Scheduling a pickup is easy. Log in to your account, select \"Schedule Pickup,\" choose your preferred date and time window, and our courier will come to your door to collect the package."
+      }
+    ],
+    "cta": {
+      "headline": "We are a trusted logistics partner, delivering timely and secure shipping solutions.",
+      "subtitle": "Ready to ship? Let's get your package moving today.",
+      "seeService": "See Our Service",
+      "getQuote": "Get a Quote"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "Company",
+      "aboutUs": "About us",
+      "ourTeam": "Our team",
+      "sustainability": "Sustainability",
+      "careers": "Careers"
+    },
+    "services": {
+      "title": "Services",
+      "worldwideShipping": "Worldwide shipping",
+      "seaFreight": "Sea freight",
+      "airFreight": "Air freight",
+      "lastMileDelivery": "Last-mile delivery"
+    },
+    "shipping": {
+      "title": "Shipping",
+      "trackPackages": "Track Packages",
+      "calculateRate": "Calculate Rate",
+      "schedulePickup": "Schedule Pickup",
+      "prohibitedItems": "Prohibited Items"
+    },
+    "support": {
+      "title": "Support",
+      "helpCenter": "Help Center",
+      "customsClearance": "Customs Clearance",
+      "fileAClaim": "File a Claim",
+      "contactUs": "Contact Us"
+    },
+    "news": {
+      "title": "News",
+      "pressReleases": "Press Releases",
+      "logisticsBlog": "Logistics Blog",
+      "marketUpdates": "Market Updates"
+    },
+    "copyright": "Copyright © WYN 2025 | All Rights Reserved",
+    "readyToShip": "Ready to ship smarter?",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "email": "info@wyn.com"
+  }
+}
