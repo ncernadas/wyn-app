@@ -14,11 +14,8 @@ export function LanguagePicker() {
   const handleLocaleChange = (newLocale: string) => {
     if (newLocale === currentLocale) return;
 
-    // Remove current locale from pathname
-    // pathname will be like: /es/path or /en/path
     const pathWithoutLocale = pathname.replace(/^\/(es|en)/, "");
 
-    // Add new locale to path
     const newPath = `/${newLocale}${pathWithoutLocale || ""}`;
 
     router.push(newPath);

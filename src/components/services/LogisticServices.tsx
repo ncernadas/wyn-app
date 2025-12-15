@@ -19,6 +19,11 @@ import { LuArrowDown, LuTruck, LuRocket, LuPackageCheck } from 'react-icons/lu';
 import { FaStar } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
 import { getImagePath } from '@/imagesPath';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const colors = {
@@ -49,9 +54,91 @@ const CustomTag = ({ icon: IconComponent, label }: { icon: any; label: string })
 
 const LogisticServices = () => {
     const t = useTranslations('services');
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const headingRef = useRef<HTMLHeadingElement>(null);
+    const textRef = useRef<HTMLParagraphElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const ratingRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
+    const tagsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+        const heading = headingRef.current;
+        const text = textRef.current;
+        const button = buttonRef.current;
+        const rating = ratingRef.current;
+        const image = imageRef.current;
+        const tags = tagsRef.current;
+
+        if (!section || !heading || !text) return;
+
+        gsap.set(heading, { x: -100, opacity: 0 });
+        gsap.set(text, { x: -100, opacity: 0 });
+        gsap.set(button, { scale: 0, opacity: 0 });
+        gsap.set(rating, { x: -50, opacity: 0 });
+        gsap.set(image, { scale: 0.8, opacity: 0, rotation: -10 });
+        if (tags) gsap.set(tags.children, { y: 50, opacity: 0, scale: 0.8 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play reverse play reverse",
+            }
+        });
+
+        tl.to(heading, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        })
+        .to(text, {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out"
+        }, "-=0.6")
+        .to(button, {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            ease: "back.out(1.7)"
+        }, "-=0.4")
+        .to(rating, {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out"
+        }, "-=0.5")
+
+        .to(image, {
+            scale: 1,
+            opacity: 1,
+            rotation: 0,
+            duration: 1,
+            ease: "back.out(1.4)"
+        }, "-=0.8")
+
+        .to(tags?.children || [], {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "back.out(1.4)"
+        }, "-=0.6");
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            tl.kill();
+        };
+    }, []);
 
     return (
-        <Box as="section" py={16} px={{ base: 4, md: 8 }}>
+        <Box ref={sectionRef} as="section" py={16} px={{ base: 4, md: 8 }}>
             <SimpleGrid
                 columns={{ base: 1, lg: 2 }}
                 bg={colors.darkGreen}
@@ -67,6 +154,7 @@ const LogisticServices = () => {
                     color="white"
                 >
                     <Heading
+                        ref={headingRef}
                         as="h2"
                         fontSize={{ base: "3xl", md: "4xl", xl: "5xl" }}
                         fontWeight="extrabold"
@@ -76,7 +164,7 @@ const LogisticServices = () => {
                         {t('title')}
                     </Heading>
 
-                    <Text fontSize="lg" opacity={0.9} mb={12} maxW="lg">
+                    <Text ref={textRef} fontSize="lg" opacity={0.9} mb={12} maxW="lg">
                         {t('description')}
                     </Text>
 
@@ -87,6 +175,7 @@ const LogisticServices = () => {
                     >
 
                         <IconButton
+                            ref={buttonRef}
                             aria-label="Scroll down"
                             variant="outline"
                             color="white"
@@ -101,6 +190,7 @@ const LogisticServices = () => {
                         </IconButton>
 
                         <HStack
+                            ref={ratingRef}
                             bg={colors.lightGreenBox}
                             p={4}
                             rounded="2xl"
@@ -137,6 +227,7 @@ const LogisticServices = () => {
                 >
 
                     <Box
+                        ref={imageRef}
                         w="full"
                         h={{ base: "300px", lg: "400px" }}
                         bg="blackAlpha.100"
@@ -157,6 +248,7 @@ const LogisticServices = () => {
                     </Box>
 
                     <Flex
+                        ref={tagsRef}
                         wrap="wrap"
                         justify="center"
                         gap={4}

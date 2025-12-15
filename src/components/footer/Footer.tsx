@@ -16,9 +16,19 @@ import { LuArrowRight, LuTwitter, LuInstagram, LuLinkedin } from 'react-icons/lu
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { getImagePath } from '@/imagesPath';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
     const t = useTranslations('footer');
+    const footerRef = useRef<HTMLDivElement>(null);
+    const linksGridRef = useRef<HTMLDivElement>(null);
+    const logoSectionRef = useRef<HTMLDivElement>(null);
+    const ctaSectionRef = useRef<HTMLDivElement>(null);
+    const bottomSectionRef = useRef<HTMLDivElement>(null);
 
     const footerLinks = {
         company: {
@@ -67,11 +77,66 @@ const Footer = () => {
         }
     };
 
+    useEffect(() => {
+        const footer = footerRef.current;
+        const linksGrid = linksGridRef.current;
+        const logoSection = logoSectionRef.current;
+        const ctaSection = ctaSectionRef.current;
+        const bottomSection = bottomSectionRef.current;
+
+        if (!footer || !linksGrid || !logoSection || !ctaSection || !bottomSection) return;
+
+        gsap.set(linksGrid.children, { y: 50, opacity: 0 });
+        gsap.set(logoSection, { x: -50, opacity: 0 });
+        gsap.set(ctaSection, { x: 50, opacity: 0 });
+        gsap.set(bottomSection, { y: 30, opacity: 0 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: footer,
+                start: "top 85%",
+                end: "bottom 15%",
+                toggleActions: "play reverse play reverse",
+            }
+        });
+
+        tl.to(linksGrid.children, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power3.out"
+        })
+        .to(logoSection, {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out"
+        }, "-=0.6")
+        .to(ctaSection, {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out"
+        }, "-=0.6")
+        .to(bottomSection, {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out"
+        }, "-=0.4");
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            tl.kill();
+        };
+    }, []);
+
     return (
-        <Box as="footer" bg="white" pt={16} pb={8} borderTop="1px solid" borderColor="gray.100">
+        <Box ref={footerRef} as="footer" bg="white" pt={16} pb={8} borderTop="1px solid" borderColor="gray.100">
             <Container maxW="container.xl">
 
-                <SimpleGrid columns={{ base: 2, md: 3, lg: 5 }} gap={8} mb={16}>
+                <SimpleGrid ref={linksGridRef} columns={{ base: 2, md: 3, lg: 5 }} gap={8} mb={16}>
                     {Object.entries(footerLinks).map(([category, data]) => (
                         <Stack key={category} align="flex-start" gap={3}>
                             <Text fontWeight="bold" fontSize="lg" color="gray.900" mb={1}>
@@ -103,7 +168,7 @@ const Footer = () => {
                     mb={14}
                 >
 
-                    <Box>
+                    <Box ref={logoSectionRef}>
                         <Image
                             src={getImagePath("/logos/svg/LogoBlack.svg")}
                             alt="WYN Logo"
@@ -116,7 +181,7 @@ const Footer = () => {
                         </Text>
                     </Box>
 
-                    <Flex align="center" gap={4} wrap="wrap">
+                    <Flex ref={ctaSectionRef} align="center" gap={4} wrap="wrap">
                         <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="medium" color="gray.800">
                             {t('readyToShip')}
                         </Text>
@@ -134,6 +199,7 @@ const Footer = () => {
                 </Flex>
 
                 <Flex
+                    ref={bottomSectionRef}
                     direction={{ base: 'column-reverse', md: 'row' }}
                     justify="space-between"
                     align="center"

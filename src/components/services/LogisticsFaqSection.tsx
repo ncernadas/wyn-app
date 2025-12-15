@@ -13,18 +13,86 @@ import {
 } from '@chakra-ui/react';
 import { LuChevronDown, LuArrowRight } from 'react-icons/lu';
 import { useTranslations } from 'next-intl';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const LogisticsFaqSection = () => {
     const t = useTranslations('faq');
     const questions = t.raw('questions') as Array<{ question: string; answer: string }>;
 
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const headingRef = useRef<HTMLHeadingElement>(null);
+    const subtitleRef = useRef<HTMLParagraphElement>(null);
+    const accordionRef = useRef<HTMLDivElement>(null);
+    const ctaBoxRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+        const heading = headingRef.current;
+        const subtitle = subtitleRef.current;
+        const accordion = accordionRef.current;
+        const ctaBox = ctaBoxRef.current;
+
+        if (!section || !heading || !subtitle || !accordion || !ctaBox) return;
+
+        gsap.set(heading, { x: -100, opacity: 0 });
+        gsap.set(subtitle, { x: 100, opacity: 0 });
+        gsap.set(accordion.children, { y: 30, opacity: 0 });
+        gsap.set(ctaBox, { scale: 0.9, opacity: 0, y: 50 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play reverse play reverse",
+            }
+        });
+
+        tl.to(heading, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        })
+        .to(subtitle, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.7")
+        .to(accordion.children, {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power2.out"
+        }, "-=0.5")
+        .to(ctaBox, {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "back.out(1.4)"
+        }, "-=0.3");
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            tl.kill();
+        };
+    }, []);
+
     return (
-        <Box as="section" py={20} bg="white">
+        <Box ref={sectionRef} as="section" py={20} bg="white">
             <Container maxW="container.xl">
 
                 <SimpleGrid columns={{ base: 1, lg: 2 }} gap={10} mb={16} alignItems="end">
                     <Box>
                         <Heading
+                            ref={headingRef}
                             as="h2"
                             fontSize={{ base: "3xl", md: "5xl" }}
                             fontWeight="medium"
@@ -37,13 +105,13 @@ const LogisticsFaqSection = () => {
                         </Heading>
                     </Box>
                     <Box>
-                        <Text fontSize="lg" color="gray.500" maxW="md">
+                        <Text ref={subtitleRef} fontSize="lg" color="gray.500" maxW="md">
                             {t('subtitle')}
                         </Text>
                     </Box>
                 </SimpleGrid>
 
-                <Box mb={20}>
+                <Box ref={accordionRef} mb={20}>
                     <Accordion.Root collapsible defaultValue={['item-1']} variant="plain">
                         {questions.map((item, index) => (
                             <Accordion.Item
@@ -82,6 +150,7 @@ const LogisticsFaqSection = () => {
                 </Box>
 
                 <Box
+                    ref={ctaBoxRef}
                     bg="black"
                     borderRadius="3xl"
                     px={{ base: 6, md: 12 }}
